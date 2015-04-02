@@ -6,6 +6,7 @@ class RailDriver
 
     public enum RDid
     {
+        None = -1,
         Reverser,
         Throttle,
         CombinedThrottle,
@@ -75,18 +76,24 @@ class RailDriver
         Max
     }
 
-    private static bool inited = false;
-
     [DllImport("raildriver.dll")]
     public static extern float GetRailSimValue(RDid id, RDmod modifier);
     [DllImport("raildriver.dll")]
     public static extern void SetRailDriverConnected(bool isConnected);
     [DllImport("raildriver.dll")]
     public static extern void SetRailSimValue(RDid id, Single value);
+    [DllImport("raildriver.dll")]
+    public static extern bool GetRailSimConnected();
+    [DllImport("raildriver.dll")]
+    public static extern bool GetRailSimLocoChanged();
+    [DllImport("raildriver.dll")]
+    public static extern bool GetRailSimCombinedThrottleBrake();
 
-    public static void init()
-    {
-        SetRailDriverConnected(true);
-    }
+    [DllImport("raildriver.dll")]
+    public static extern void SetRailSimConnected(bool isConnected);
+    [DllImport("raildriver.dll")]
+    public static extern RDid GetNextRailDriverId(RDid Start);
+    [DllImport("raildriver.dll")]
+    public static extern float GetRailDriverValue(RDid id);
 
 }
