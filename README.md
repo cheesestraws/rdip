@@ -5,7 +5,7 @@ rdip is a project to do two things:
 * To stream control signals from a PI RailDriver controller over an IP network to another computer where the rail simulator is running.  You could even do this over the Internet, if you really like latency for some reason.
 * To let people experiment with writing software to control a rail simulator that has RailDriver support by just sending UDP packets and not having to learn a specialist interface.
 
-There are a number of things in this repository, which may be useful separately or together.
+There are a number of things in this repository, which may be useful separately or together.  rdip was originally designed for the train simulator in the Human Factors Research Group at the University of Nottingham.
 
 ## rdip-server
 
