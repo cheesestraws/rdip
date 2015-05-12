@@ -60,7 +60,7 @@ namespace rdip_server
         {
             if (!running)
             {
-                udp = new UdpClient(Properties.Settings.Default.Port);
+                udp = new UdpClient(new IPEndPoint(IPAddress.Any, Properties.Settings.Default.Port));
                 udp.BeginReceive(new AsyncCallback(PacketHandler), null);
             }
             running = true;
