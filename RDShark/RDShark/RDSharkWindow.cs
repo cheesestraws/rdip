@@ -12,7 +12,8 @@ namespace RDShark
 
     public partial class RDSharkWindow : Form
     {
-        // Controlled by the 'follow new messages' menu item: if true, the list box scrolls to the bottom.
+        /* Controlled by the 'follow new messages' menu item: if true, the list box scrolls to the bottom whenever a new
+           line is added. */
         private bool alwaysScrollToBottom = true;
 
         public RDSharkWindow()
@@ -23,7 +24,8 @@ namespace RDShark
 
         private void log(string str)
         {
-            requestLog.Items.Add(str);
+            string datestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            requestLog.Items.Add(datestamp + ": " + str);
             if (alwaysScrollToBottom)
             {
                 requestLog.TopIndex = requestLog.Items.Count - 1;
