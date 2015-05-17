@@ -44,6 +44,7 @@
             this.combinedThrottleAndBrakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.separateThrottleAndBrakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutRDSharkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +81,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveAs,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
@@ -174,6 +176,13 @@
             this.aboutRDSharkToolStripMenuItem.Text = "&About RDShark";
             this.aboutRDSharkToolStripMenuItem.Click += new System.EventHandler(this.aboutRDSharkToolStripMenuItem_Click);
             // 
+            // saveAs
+            // 
+            this.saveAs.Name = "saveAs";
+            this.saveAs.Size = new System.Drawing.Size(152, 22);
+            this.saveAs.Text = "Save As...";
+            this.saveAs.Click += new System.EventHandler(this.saveAs_Click);
+            // 
             // RDSharkWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +217,7 @@
         private System.Windows.Forms.ToolStripMenuItem combinedThrottleAndBrakeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem separateThrottleAndBrakeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutRDSharkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAs;
     }
 }
 

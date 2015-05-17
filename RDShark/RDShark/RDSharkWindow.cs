@@ -99,5 +99,21 @@ namespace RDShark
         {
             (new AboutBox()).ShowDialog(this);
         }
+
+        private void saveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Text files|*.txt|All files|*.*";
+            dialog.ShowDialog(this);
+            if (dialog.FileName != "")
+            {
+                System.IO.StreamWriter output = new System.IO.StreamWriter(dialog.OpenFile());
+                foreach (string line in this.requestLog.Items)
+                {
+                    output.WriteLine(line);
+                }
+                output.Close();
+            }
+        }
     }
 }
